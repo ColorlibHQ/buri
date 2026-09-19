@@ -78,12 +78,12 @@ Colorlib_Customizer::add_field(
             [
                 'social_link_title' => esc_html__( 'Facebook', 'buri' ),
                 'social_url'  => '#',
-                'social_icon'  => 'fa fa-facebook-square',
+                'social_icon'  => 'fa-brands fa-facebook-square',
             ],
             [
                 'social_link_title' => esc_html__( 'Instagram', 'buri' ),
                 'social_url'  => '#',
-                'social_icon'  => 'fa fa-instagram',
+                'social_icon'  => 'fa-brands fa-instagram',
             ],
         ],
 		'fields'       => array(
@@ -102,7 +102,7 @@ Colorlib_Customizer::add_field(
 			'social_icon'        => array(
 				'label'   => esc_html__( 'Icon', 'buri' ),
 				'type'    => 'colorlib-icon-picker',
-				'default' => 'fa fa-facebook-square',
+				'default' => 'fa-brands fa-facebook-square',
 			),
 			
 		),

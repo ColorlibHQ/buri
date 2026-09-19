@@ -109,23 +109,23 @@ class Buri_Reviews extends Widget_Base {
 		                'options' => [
 			                '1' => [
 				                'title' => __('1', 'buri'),
-				                'icon' => 'fa fa-star',
+				                'icon' => 'fa-solid fa-star',
 			                ],
 			                '2' => [
 				                'title' => __('2', 'buri'),
-				                'icon' => 'fa fa-star',
+				                'icon' => 'fa-solid fa-star',
 			                ],
 			                '3' => [
 				                'title' => __('3', 'buri'),
-				                'icon' => 'fa fa-star',
+				                'icon' => 'fa-solid fa-star',
 			                ],
 			                '4' => [
 				                'title' => __('4', 'buri'),
-				                'icon' => 'fa fa-star',
+				                'icon' => 'fa-solid fa-star',
 			                ],
 			                '5' => [
 				                'title' => __('5', 'buri'),
-				                'icon' => 'fa fa-star',
+				                'icon' => 'fa-solid fa-star',
 			                ],
                         ],
                         'default'  => '5'
@@ -299,7 +299,7 @@ class Buri_Reviews extends Widget_Base {
                         if (!empty( $stars )) {
                             for ($i = 1; $i <= 5; $i++) {
                                 if ($stars >= $i) {
-                                    echo '<i class="fa fa-star"></i>';
+                                    echo '<i class="fa-solid fa-star"></i>';
                                 }
                             }
                         }

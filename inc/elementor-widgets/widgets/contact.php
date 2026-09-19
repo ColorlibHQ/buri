@@ -83,17 +83,17 @@ class Buri_Contact extends Widget_Base {
                     [
                         'label' => esc_html__( 'Buttonwood, California.', 'buri' ),
                         'desc'  => esc_html__( 'Rosemead, CA 91770', 'buri' ),
-                        'icon'  => 'fa fa-home',
+                        'icon'  => 'fa-solid fa-home',
                     ],
                     [
                         'label' => esc_html__( '00 (440) 9865 562', 'buri' ),
                         'desc'  => esc_html__( 'Mon to Fri 9am to 6pm', 'buri' ),
-                        'icon'  => 'fa fa-tablet',
+                        'icon'  => 'fa-solid fa-tablet',
                     ],
                     [
                         'label' => esc_html__( 'support@colorlib.com', 'buri' ),
                         'desc'  => esc_html__( 'Send us your query anytime!', 'buri' ),
-                        'icon'  => 'fa fa-envelope-o',
+                        'icon'  => 'fa-regular fa-envelope',
                     ],                    
                 ]
             ]
