@@ -1,9 +1,19 @@
-(function ($) {
-  "use strict";
+/**
+ * Buri front-end behaviour, without jQuery.
+ *
+ * The plugin calls keep the options they always had; ColorlibUI provides
+ * drop-in versions of the datepicker, Magnific Popup and Owl Carousel that
+ * build the same markup, so the theme's stylesheets apply unchanged.
+ */
+(function () {
+  'use strict';
 
-  $('#datepicker').datepicker();
+  var UI = window.ColorlibUI;
+  if (!UI) return;
 
-  $('.popup-youtube, .popup-vimeo').magnificPopup({
+  UI.datepicker('#datepicker');
+
+  UI.magnific('.popup-youtube, .popup-vimeo', {
     // disableOn: 700,
     type: 'iframe',
     mainClass: 'mfp-fade',
@@ -13,52 +23,52 @@
   });
 
   if (document.getElementById('default-select')) {
-    ColorlibUI.enhanceSelects('select');
+    UI.enhanceSelects('select');
   }
 
-  var review = $('.client_review_part');
-  if (review.length) {
-    review.owlCarousel({
-      items: 3,
-      loop: true,
-      dots: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      autoplayTimeout: 5000,
-      nav: false,
-      margin: 20,
-      center: true,
-      responsive:{
-        0:{
-            items:1,
-            dots: false
-        },
-        600:{
-            items:2,
-        },
-        1000:{
-            items:3,
-        }
-    }
-    });
-  }
-  // menu fixed js code
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop() + 1;
-    if (window_top > 50) {
-      $('.main_menu').addClass('menu_fixed animated fadeInDown');
-    } else {
-      $('.main_menu').removeClass('menu_fixed animated fadeInDown');
+  UI.owl('.client_review_part', {
+    items: 3,
+    loop: true,
+    dots: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 5000,
+    nav: false,
+    margin: 20,
+    center: true,
+    responsive: {
+      0: {
+        items: 1,
+        dots: false
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
     }
   });
 
- $('.gallery_img').magnificPopup({
-  type: 'image',
-  gallery:{
-    enabled:true
-  }
-});
+  // menu fixed js code
+  UI.ready(function () {
+    var menus = UI.toElements('.main_menu');
+    window.addEventListener('scroll', function () {
+      var fixed = window.pageYOffset + 1 > 50;
+      menus.forEach(function (menu) {
+        if (fixed) {
+          menu.classList.add('menu_fixed', 'animated', 'fadeInDown');
+        } else {
+          menu.classList.remove('menu_fixed', 'animated', 'fadeInDown');
+        }
+      });
+    }, { passive: true });
+  });
 
-
-
-}(jQuery));
+  UI.magnific('.gallery_img', {
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
+}());

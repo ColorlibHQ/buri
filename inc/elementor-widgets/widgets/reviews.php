@@ -362,34 +362,40 @@ class Buri_Reviews extends Widget_Base {
         if( \Elementor\Plugin::$instance->editor->is_edit_mode() === true  ) {
         ?>
         <script>
-        ( function( $ ){
-            var review = $('.client_review_part');
-            if (review.length) {
-                review.owlCarousel({
-                items: 3,
-                loop: true,
-                dots: true,
-                autoplay: true,
-                autoplayHoverPause: true,
-                autoplayTimeout: 5000,
-                nav: false,
-                margin: 20,
-                center: true,
-                responsive:{
-                    0:{
-                        items:1,
-                        dots: false
-                    },
-                    600:{
-                        items:2,
-                    },
-                    1000:{
-                        items:3,
+        (function () {
+            function run() {
+                var UI = window.ColorlibUI;
+                if (!UI) return;
+                UI.owl('.client_review_part', {
+                    items: 3,
+                    loop: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 5000,
+                    nav: false,
+                    margin: 20,
+                    center: true,
+                    responsive:{
+                        0:{
+                            items:1,
+                            dots: false
+                        },
+                        600:{
+                            items:2,
+                        },
+                        1000:{
+                            items:3,
+                        }
                     }
-                }
                 });
             }
-        })(jQuery);
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
         </script>
         <?php 
         }

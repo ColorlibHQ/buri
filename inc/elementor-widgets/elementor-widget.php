@@ -294,15 +294,13 @@ if ( !class_exists( 'Buri_El_Widgets' ) ) {
             // googleapis js
             wp_register_script( 'maps-googleapis', '//maps.googleapis.com/maps/api/js?key='.esc_attr( $apiKey ) );
 
-            // ajaxchimp js
-            wp_enqueue_script( 'jquery-ajaxchimp', BURI_DIR_ELEMENTOR . 'assets/js/jquery.ajaxchimp.min.js', array('jquery'), '1.0', true );
 
 
             // buri map custom js
-            wp_register_script( 'buri-map-custom', BURI_DIR_ELEMENTOR . 'assets/js/map-custom.js', array('jquery'), '1.0', true );
+            wp_register_script( 'buri-map-custom', BURI_DIR_ELEMENTOR . 'assets/js/map-custom.js', array(), '1.0-s2', true );
 
             // buri companion main js
-            wp_enqueue_script( 'buri', BURI_DIR_ELEMENTOR . 'assets/js/buri-companion-main.js', array( 'jquery', 'jquery-ui-datepicker' ), '1.0', true );
+            wp_enqueue_script( 'buri', BURI_DIR_ELEMENTOR . 'assets/js/buri-companion-main.js', array( 'buri-ui-js' ), '1.0-s2', true );
 
 
             wp_localize_script( 'buri', 'ajax_object',

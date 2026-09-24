@@ -10,7 +10,7 @@
 add_action( 'wp_enqueue_scripts', 'buri_sl_enqueue_scripts' );
 function buri_sl_enqueue_scripts() {
 
-	wp_enqueue_script( 'buri-post-likes', BURI_DIR_JS_URI . 'post-likes.js', array( 'jquery' ), '0.5', false );
+	wp_enqueue_script( 'buri-post-likes', BURI_DIR_JS_URI . 'post-likes.js', array( 'buri-ui-js' ), '0.5-s2', true );
 
 	wp_localize_script( 'buri-post-likes', 'simpleLikes', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
