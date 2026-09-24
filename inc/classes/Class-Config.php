@@ -252,13 +252,6 @@
 						'in_footer' 	=> true
 					),
 					array(
-						'handler'		=> 'buri-jquery-nice-select-js',
-						'file' 			=> $jsPath.'jquery.nice-select.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
-						'in_footer' 	=> true
-					),
-					array(
 						'handler'		=> 'buri-slick-js',
 						'file' 			=> $jsPath.'slick.min.js',
 						'dependency' 	=> array( 'jquery' ),
@@ -272,19 +265,19 @@
 						'version' 		=> '1.0',
 						'in_footer' 	=> true
 					),
+
 					array(
-						'handler'		=> 'buri-instagram-feed-js',
-						'file' 			=> $jsPath.'jquery.instagramFeed.min.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> '1.0',
+						'handler'		=> 'buri-ui-js',
+						'file' 			=> $jsPath.'colorlib-ui.js',
+						'dependency' 	=> array(),
+						'version' 		=> '2.1.1',
 						'in_footer' 	=> true
 					),
-
 					array(
 						'handler'		=> 'buri-custom',
 						'file' 			=> $jsPath.'custom.js',
-						'dependency' 	=> array( 'jquery' ),
-						'version' 		=> $this->buri_version,
+						'dependency' 	=> array( 'jquery', 'buri-ui-js' ),
+						'version' 		=> $this->buri_version . '-s1',
 						'in_footer' 	=> true
 					),
 

@@ -65,8 +65,6 @@
 				// Scripts Enqueue 
 				if( is_array( $scripts['scripts'] ) && count( $scripts['scripts'] ) > 0 ){
 
-					// wp_deregister_script( 'jquery' );
-					// wp_enqueue_script('jquery', BURI_DIR_JS_URI . 'jquery-1.12.1.min.js', array(), null, true);
 
 
 
